@@ -1,0 +1,9 @@
+"Consultas, asociadas a la api de graphql de hola mundo"
+type Query {
+  "Muestra un hola mundo"
+  hola: String!
+  "Retorna el hola mundo, con el resultado del parametro (nombre)"
+  holaConNombre(nombre: String!): String!
+  "Hola Mundo en el curso de GraphQL"
+  holaAlCursoGraphQL: String!
+}
