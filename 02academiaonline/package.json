@@ -4,10 +4,10 @@
   "description": "Api en GraphQL para academia online",
   "main": "build/server.js",
   "scripts": {
-    "star": "node build/server.js",
+    "start": "node build/server.js",
     "build": "tsc -p . && ncp src/schema build/schema",
     "start:dev": "yarn build:dev",
-    "build:dev": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts,graphql"
+    "build:dev": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts,graphql,json"
   },
   "keywords": [
     "graphql",
