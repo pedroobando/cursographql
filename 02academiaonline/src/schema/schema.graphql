@@ -10,7 +10,7 @@ type Estudiante {
   name: String!
   email: String!
   website: String
-  course: [Course!]!
+  course: [Curso!]!
 }
 
 type Curso {
