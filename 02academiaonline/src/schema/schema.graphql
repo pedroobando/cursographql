@@ -1,16 +1,19 @@
+"Consulta asociadas a cursos online"
 type Query {
   "Lista de los estudiantes de la academia"
-  estudiantes: String
+  estudiantes: [Estudiante!]!
 }
 
 "Informacion de los estudiantes"
 type Estudiante {
   "Identificativo del estudiante"
   id: ID!
+  "Nombre del estudiante"
   name: String!
+  "Email del estudiante"
   email: String!
   website: String
-  course: [Curso!]!
+  courses: [Curso!]!
 }
 
 type Curso {
