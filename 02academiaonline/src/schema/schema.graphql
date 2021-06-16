@@ -15,6 +15,18 @@ type Mutation {
   elimiCurso(id: ID!): Curso!
 }
 
+input CursoInput {
+  id: ID
+  title: String!
+  description: String!
+  clases: Int!
+  time: Float!
+  logo: String!
+  level: Nivel = TODOS
+  path: String!
+  teacher: String!
+}
+
 "Informacion de los estudiantes"
 type Estudiante {
   "Identificativo del estudiante"
