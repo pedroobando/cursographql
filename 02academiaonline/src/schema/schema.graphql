@@ -7,7 +7,7 @@ type Query {
   "Lista de los cursos de la academia"
   cursos: [Curso!]!
   "Informacion del curso de la academia seleccionado por ID"
-  curso(id: ID!): Curso!
+  curso(curso: ID!): Curso!
 }
 
 "Informacion de los estudiantes"
@@ -49,6 +49,6 @@ enum Nivel {
 type Valoracion {
   id: ID!
   name: String!
-  point: Float!
+  points: Float!
   comment: String
 }
