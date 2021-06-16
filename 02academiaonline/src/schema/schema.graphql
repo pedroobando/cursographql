@@ -10,9 +10,9 @@ type Query {
 }
 
 type Mutation {
-  nuevoCurso(curso: CursoInput!): Curso!
-  modifCurso(curso: CursoInput!): Curso!
-  elimiCurso(id: ID!): Curso!
+  cursoNuevo(curso: CursoInput!): Curso!
+  cursoModif(curso: CursoInput!): Curso!
+  cursoElimi(id: ID!): Curso!
 }
 
 input CursoInput {
