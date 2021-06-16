@@ -1,4 +1,3 @@
-"Consulta asociadas a cursos online"
 type Query {
   "Lista de los estudiantes de la academia"
   estudiantes: [Estudiante!]!
@@ -8,6 +7,12 @@ type Query {
   cursos: [Curso!]!
   "Informacion del curso de la academia seleccionado por ID"
   curso(curso: ID!): Curso!
+}
+
+type Mutation {
+  nuevoCurso(curso: CursoInput!): Curso!
+  modifCurso(curso: CursoInput!): Curso!
+  elimiCurso(id: ID!): Curso!
 }
 
 "Informacion de los estudiantes"
