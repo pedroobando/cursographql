@@ -2,6 +2,12 @@
 type Query {
   "Lista de los estudiantes de la academia"
   estudiantes: [Estudiante!]!
+  "Informacion del estudiante de la academia seleccionado por ID"
+  estudiante(id: ID!): Estudiante!
+  "Lista de los cursos de la academia"
+  cursos: [Curso!]!
+  "Informacion del curso de la academia seleccionado por ID"
+  curso(id: ID!): Curso!
 }
 
 "Informacion de los estudiantes"
@@ -12,10 +18,13 @@ type Estudiante {
   name: String!
   "Email del estudiante"
   email: String!
+  "Sitio web del estudiante"
   website: String
+  "Cursos inscritos del estudiante"
   courses: [Curso!]!
 }
 
+"Informacion del curso de la academia"
 type Curso {
   id: ID!
   title: String!
