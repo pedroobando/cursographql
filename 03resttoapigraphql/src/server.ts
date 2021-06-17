@@ -17,6 +17,7 @@ const init = () => {
     introspection: true, // Necesario
     dataSources: () => ({
       seasons: new dataSources.SeasonsData(),
+      races: new dataSources.SeasonsData(),
     }),
   });
 
@@ -25,9 +26,7 @@ const init = () => {
 
   const PORT = process.env.PORT || 5000;
 
-  app.listen({ port: PORT }, (): void =>
-    console.log(`http://localhost:${PORT}/graphql`)
-  );
+  app.listen({ port: PORT }, (): void => console.log(`http://localhost:${PORT}/graphql`));
 };
 
 init();
