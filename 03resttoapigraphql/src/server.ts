@@ -17,7 +17,7 @@ const init = () => {
     introspection: true, // Necesario
     dataSources: () => ({
       seasons: new dataSources.SeasonsData(),
-      races: new dataSources.SeasonsData(),
+      races: new dataSources.RacesData(),
     }),
   });
 

@@ -5,15 +5,14 @@ export class RacesData extends F1 {
     super();
   }
 
-  // async getSeasons() {
-  //   return await this.get('seasons.json?limit=100', {
-  //     cacheOptions: { ttl: 60 },
-  //   });
-  // }
+  async getYear(year: string) {
+    const currentYear = new Date().getFullYear();
+    if (isNaN(+year) || +year < 1950 || +year > currentYear) {
+      year = String(currentYear);
+    }
 
-  // async getRaces() {
-  //   return await this.get('seasons.json?limit=100', {
-  //     cacheOptions: { ttl: 60 },
-  //   });
-  // }
+    return await this.get(`${year}.json`, {
+      cacheOptions: { ttl: 60 },
+    });
+  }
 }
