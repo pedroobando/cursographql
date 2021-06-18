@@ -1,6 +1,9 @@
 type Query {
   seasonsList: [Season!]!
   racesByYear(year: String!): [Race!]!
+  raceSelect(year: String!, round: Int!): Race
+  historyDrivers(pageElements: Int, page: Int): [Driver!]!
+  driversYear(year: String!): [Driver!]!
 }
 
 type Season {
@@ -19,6 +22,7 @@ type Location {
 type Circuit {
   id: ID!
   url: String!
+  urlMobile: String!
   name: String!
   location: Location!
 }
@@ -27,10 +31,22 @@ type Race {
   season: String!
   round: String!
   url: String!
+  urlMobile: String!
   name: String!
   circuit: Circuit!
   date: String!
-  time: String!
+  time: String
+}
+
+type Driver {
+  id: String!
+  url: String!
+  urlMobile: String!
+  name: String!
+  dateOfBirth: String!
+  nationality: String!
+  code: String
+  permanentNumber: String
 }
 
 type Mutation {

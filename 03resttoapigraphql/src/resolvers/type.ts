@@ -9,14 +9,22 @@ const type: IResolvers = {
   Race: {
     name: (parent) => parent.raceName,
     circuit: (parent) => parent.Circuit,
+    urlMobile: (parent) => getWikipediaMobileUrl(parent.url),
+    // time: (parent) => (typeof parent.time === 'undefined' ? '00:00' : parent.time),
   },
   Circuit: {
     id: (parent) => parent.circuitId,
     name: (parent) => parent.circuitName,
     location: (parent) => parent.Location,
+    urlMobile: (parent) => getWikipediaMobileUrl(parent.url),
   },
   Location: {
     lng: (parent) => parent.long,
+  },
+  Driver: {
+    id: (parent) => parent.driverId,
+    name: (parent) => parent.givenName.concat(' ').concat(parent.familyName),
+    urlMobile: (parent) => getWikipediaMobileUrl(parent.url),
   },
 };
 
