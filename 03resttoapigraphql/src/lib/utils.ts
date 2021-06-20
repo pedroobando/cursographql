@@ -10,3 +10,9 @@ export const checkYear = (year: string) => {
 export const checkRound = (round: number) => {
   return round >= 100 ? 1 : round;
 };
+
+export const paginationOptions = (pageElements: number, page: number) => {
+  const offset = (page - 1) * pageElements;
+  const limit = pageElements;
+  return `limit=${limit}&offset=${offset}`;
+};

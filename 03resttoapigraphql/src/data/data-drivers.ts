@@ -1,4 +1,4 @@
-import { checkRound, checkYear } from '../lib/utils';
+import { checkRound, checkYear, paginationOptions } from '../lib/utils';
 import { F1 } from './data-source';
 
 export class DriversData extends F1 {
@@ -12,9 +12,7 @@ export class DriversData extends F1 {
         cacheOptions: { ttl: 60 },
       });
     }
-    const offset = (page - 1) * pageElements;
-    const limit = pageElements;
-    const filter = `limit=${limit}&offset=${offset}`;
+    const filter = paginationOptions(pageElements, page);
     return await this.get(`drivers.json?${filter}`, {
       cacheOptions: { ttl: 60 },
     });
@@ -37,6 +35,13 @@ export class DriversData extends F1 {
 
   async getDriver(id: string) {
     return await this.get(`/drivers/${id}.json`, {
+      cacheOptions: { ttl: 60 },
+    });
+  }
+
+  async getSeasonsPilotsRanking(year: string) {
+    year = checkYear(year);
+    return await this.get(`${year}/driverStandings.json`, {
       cacheOptions: { ttl: 60 },
     });
   }
