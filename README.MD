@@ -18,3 +18,11 @@ Implementa un api, leyendo un archivo json el cual hace una simulacion de una ba
 
 Es un APIREST via web, que se conecta a una base de datos que contiene datos de carreras de formula 1, como pilotos, carreras, temporadas, circuitos, estadisticas, etc.
 El APIREST, es transformado en ENDPOINT de GraphQL.
+
+## Deployments en Vercel
+
+Los Deployments son en vercel, hay se pueden ver y probar los API de GraphQL
+
+- [Api Hola Mundo](https://graphql-hola-mundo.vercel.app/)
+- [Api Academia Online](https://graphql-academia-online-seven.vercel.app/)
+- [Api Ergast - F1](https://graphql-api-ergast-f1.vercel.app/)

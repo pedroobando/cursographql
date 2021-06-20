@@ -1,17 +1,15 @@
-# Academia Online
+# Hola-Mundo
 
-Api GraphQL de Academia Online
+Un sencillo API GraphQL
+Que solo muestra un hola mundo mediante el servidor de Apollo.
 
 ## Origen de Datos
 
-Archivos de JSON, courses.json que contendra los cursos y
-students, que contendra los estudiantes...
+Ninguno
 
 ## Deployment
 
 - [Api Hola Mundo](https://graphql-hola-mundo.vercel.app/)
-- [Api Academia Online](https://graphql-academia-online-seven.vercel.app/)
-- [Api Ergast - F1](https://graphql-api-ergast-f1.vercel.app/)
 
 ## Matar los procesos activos
 
