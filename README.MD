@@ -11,3 +11,10 @@ Docente del Curso: ANARTZ MUGIKA
 Crea un api holamundo, explicando los conceptos basicos. Primero usa express-graphql y luego implementa apollo-server-express
 
 ## API Academia de Cursos Online
+
+Implementa un api, leyendo un archivo json el cual hace una simulacion de una base de datos, de cursos y estudiantes, se hace consultas, inclusiones, modificaciones y eliminaciones de curso y estudiantes. Tambien los estudiantes inscritos en los diferentes cursos... etc.
+
+## API Ergast F1
+
+Es un APIREST via web, que se conecta a una base de datos que contiene datos de carreras de formula 1, como pilotos, carreras, temporadas, circuitos, estadisticas, etc.
+El APIREST, es transformado en ENDPOINT de GraphQL.

@@ -1,17 +1,38 @@
 type Query {
+  "Lista de las temporas de Formula 1. De 1950 a la fecha actual, seleccionando la temporada"
   seasonsList: [Season!]!
+  """
+  Obtenemos la informacion de las carreras seleccionadas por año.
+  Tener en cuenta que solo existen temporas desde la 1950 a 2021.
+  """
   racesByYear(year: String!): [Race!]!
+  "Carreras seleccionas por ano o por numero de carrera"
   raceSelect(year: String!, round: Int!): Race
+  """
+  Lista de pilotos de la F1 de toda la historia
+  Tenemos dos opciones:
+  Obtener todos los pilotos o
+  hacer uso de la paginacion y podemos limitar el numero de resultados
+  """
   historyDrivers(pageElements: Int, page: Int): [Driver!]!
+  "Lista de pilotos de la F1 que participaron en el ano seleccionado"
   driversYear(year: String!): [Driver!]!
+  "Lista de pilotos de la F1, que participaron en el ano y en la carrera."
+  driversYearAndRound(year: String!, round: Int!): [Driver!]!
+  "Seleccion del piloto, segun su ID"
+  driverSelect(id: String!): Driver
+  "Clasificacion final de los pilotos de una temporada"
+  seasonPilotsRanking(year: String!): [DriverStanding!]!
 }
 
+"Informacion de la temporada F1"
 type Season {
   year: String!
   url: String!
   urlMobile: String!
 }
 
+"Informacion de la locacion o lugar"
 type Location {
   lat: String!
   lng: String!
@@ -19,6 +40,7 @@ type Location {
   country: String!
 }
 
+"Informacion del Circuito de Carrera de F1"
 type Circuit {
   id: ID!
   url: String!
@@ -27,6 +49,7 @@ type Circuit {
   location: Location!
 }
 
+"Informacion de la Carrera de F1"
 type Race {
   season: String!
   round: String!
@@ -38,6 +61,7 @@ type Race {
   time: String
 }
 
+"Informacion del Piloto de F1"
 type Driver {
   id: String!
   url: String!
@@ -49,6 +73,20 @@ type Driver {
   permanentNumber: String
 }
 
-type Mutation {
-  add(value: String!): [String]
+"Podium de Pilotos"
+type DriverStanding {
+  position: String!
+  positionText: String!
+  points: String!
+  wins: String!
+  driver: Driver
+  constructors: [Constructor!]!
+}
+
+type Constructor {
+  id: String!
+  url: String!
+  urlMobile: String!
+  name: String!
+  nationality: String!
 }
